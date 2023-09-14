@@ -125,7 +125,7 @@ const Page = () => {
           label="boom"
         />
         ) : (
-        <p>PRESTATIONS INDISPONIBLES</p>
+          <p>Les prestations sont indisponibles.</p>
         )}
       </div>
       <div className="col contact">
