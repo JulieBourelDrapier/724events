@@ -114,21 +114,23 @@ const Page = () => {
       </div>
     </main>
     <footer className="row">
-      <div className="col presta">
-        <h3>Notre derniére prestation</h3>
-        {last ? (
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
+      {last ? (
+        <div className="col presta">
+          <h3>Notre derniére prestation</h3>
+          <EventCard
+            imageSrc={last?.cover}
+            title={last?.title}
+            date={new Date(last?.date)}
+            small
+            label="boom"
+          />
+        </div>
         ) : (
-          <p>Les prestations sont indisponibles.</p>
+          <div className="col presta">
+            <h3>Les prestations sont indisponibles.</h3>
+          </div>
         )}
-      </div>
-      <div className="col contact">
+        <div className="col contact">
         <h3>Contactez-nous</h3>
         <address>45 avenue de la République, 75000 Paris</address>
         <div>01 23 45 67 89</div>
