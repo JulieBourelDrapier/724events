@@ -9,6 +9,7 @@ describe("When Events is created", () => {
     await screen.findByText("Prénom");
     await screen.findByText("Personel / Entreprise");
   });
+})
 
   describe("and a click is triggered on the submit button", () => {
     it("the success action is called", async () => {
@@ -21,9 +22,7 @@ describe("When Events is created", () => {
           bubbles: true,
         })
       );
-      await screen.findByText(/En cours|Envoyer/);
-      // await screen.findByText("Envoyer");
+      await screen.findByText(/Envoyer|En cours/);
       expect(onSuccess).toHaveBeenCalled();
-    });
-  });
-});
+      });
+    })
