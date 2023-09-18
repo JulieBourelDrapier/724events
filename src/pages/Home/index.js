@@ -130,6 +130,7 @@ const Page = () => {
             <h3>Prestation indisponible</h3>
           </div>
         )}
+      
         <div className="col contact">
         <h3>Contactez-nous</h3>
         <address>45 avenue de la République, 75000 Paris</address>
