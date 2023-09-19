@@ -26,13 +26,13 @@ export const DataProvider = ({ children }) => {
     try {
       const loadData = await api.loadData();
 
-      const lastEvent = loadData.events.sort((a, b) => {
+      setData(loadData);
+      const lastEvent = loadDataCopy.events.sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
-        return dateB - dateA;
+        return dateB - dateA ;
       });
-      setData(loadData);
-      setLast(lastEvent [0]);
+      setLast(lastEvent[0]);
     } catch (err) {
       setError(err);
     }
