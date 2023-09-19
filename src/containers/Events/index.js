@@ -20,7 +20,7 @@ const EventList = () => {
   const sortedEvents = currentEvents.sort((evtA, evtB) => {
     const dateA = new Date(evtA.date);
     const dateB = new Date(evtB.date);
-    return dateA < dateB ? -1 : 1
+    return dateA > dateB ? -1 : 1
   })
 
   const filteredEvents = sortedEvents.filter((event, index) => {
