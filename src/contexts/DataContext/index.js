@@ -19,22 +19,28 @@ export const api = {
 export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
+
   const [last, setLast] = useState(null);
+
   const getData = useCallback(async () => {
     try {
       const loadData = await api.loadData();
+
+      const lastEvent = loadData.events.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+      });
       setData(loadData);
-      const lastEvent = loadData.events[loadData.events.length - 1];
-      setLast(lastEvent);
+      setLast(lastEvent [0]);
     } catch (err) {
       setError(err);
     }
   }, []);
 
   useEffect(() => {
-    if (data) return;
     getData();
-  }, [data, getData]);
+  }, [getData]);
   
   return (
     <DataContext.Provider
