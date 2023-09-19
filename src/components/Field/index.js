@@ -43,7 +43,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
 
 Field.propTypes = {
   type: PropTypes.oneOf(Object.values(FIELD_TYPES)),
-  name: PropTypes.string,
+  name: PropTypes.string, 
   label: PropTypes.string,
   placeholder: PropTypes.string,
 };
