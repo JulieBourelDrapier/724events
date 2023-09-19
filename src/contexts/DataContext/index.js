@@ -27,7 +27,7 @@ export const DataProvider = ({ children }) => {
       const loadData = await api.loadData();
 
       setData(loadData);
-      const lastEvent = loadDataCopy.events.sort((a, b) => {
+      const lastEvent = loadData.events.sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
         return dateB - dateA ;
